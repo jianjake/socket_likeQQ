@@ -329,7 +329,7 @@ namespace Client
             //string newstr = "      " + msgTxt[0] + "：我" + "\r\n" + "      " + "\"发送了一个图片\"" + "           ____[" +
             //                DateTime.Now + "]" + "\r\n" + "\r\n";
            // string newstr = "  " + msgTxt[0] + msgTxt[0].Length+ "   " + msgTxt[1] + "   " + msgTxt[2] + count;
-             string picName = "03.jpeg";
+             string picName = "D:\\mysocket\\picture\\03.jpeg";
               using (var fs = new FileStream(picName, FileMode.OpenOrCreate, FileAccess.Write))
               {
                   fs.Write(buffer, count, dateLength);
@@ -338,7 +338,7 @@ namespace Client
             ShowSmsg(newstr);
             var list = new List<byte>();
             //这里直接读取的文件，只适应于小文件（读取到内存中），大文件要用到断点续传等技术
-            list.AddRange(ReadImageFile("C:\\Users\\jake\\Desktop\\03.jpeg"));
+            list.AddRange(ReadImageFile("D:\\mysocket\\picture\\03.jpeg"));
             byte[] newbuffer = list.ToArray();
             MemoryStream ms = new MemoryStream(newbuffer);
             Image image = System.Drawing.Image.FromStream(ms);
